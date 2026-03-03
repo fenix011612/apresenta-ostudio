@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mov om Espaço De Saúde e Bem Estar</title>
+
+<!-- Ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #7b5cff, #3ec6c1);
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    color:white;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+header p{
+    font-size:18px;
+    margin-top:10px;
+}
+
+nav{
+    background:white;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:600;
+    color:#555;
+}
+
+nav a:hover{
+    color:#7b5cff;
+}
+
+section{
+    display:none;
+    padding:60px 20px;
+    background:white;
+}
+
+section.active{
+    display:block;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+    color:white;
+}
+
+.btn-instagram{
+    background:#E1306C;
+}
+
+.btn-whatsapp{
+    background:#25D366;
+}
+
+.btn:hover{
+    opacity:0.85;
+}
+
+.grade{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:#f8f8f8;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card h3{
+    margin-top:0;
+    color:#7b5cff;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.foto{
+    background:#f8f8f8;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.foto img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.foto p{
+    padding:15px;
+    font-size:14px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Mov om Espaço De Saúde e Bem Estar</h1>
+    <p>Fisioterapia • Pilates • Yoga</p>
+</header>
+
+<nav>
+    <a href="#" onclick="mostrar('home')">Início</a>
+    <a href="#" onclick="mostrar('pilates')">Pilates</a>
+    <a href="#" onclick="mostrar('yoga')">Yoga</a>
+    <a href="#" onclick="mostrar('contato')">Contato</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+<div class="container">
+
+    <h2>Bem-vindo(a)</h2>
+    <p>
+        A Mov om Espaço De Saúde e Bem Estar é um ambiente dedicado ao cuidado integral
+        do corpo e da mente, oferecendo fisioterapia, pilates e yoga com acompanhamento profissional.
+    </p>
+
+    <a class="btn btn-instagram" href="https://instagram.com/movomzenyogapilates" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a class="btn btn-whatsapp" href="https://wa.me/5521999681425" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <hr style="margin:60px 0">
+
+    <h2>Sobre a Fisioterapia</h2>
+    <div class="grade">
+        <div class="card">
+            <h3>Fisioterapia Traumato-Ortopédica</h3>
+            Tratamento de lesões musculares, articulares e pós-operatórios.
+        </div>
+        <div class="card">
+            <h3>Pilates Clínico</h3>
+            Fortalecimento, postura e prevenção de dores.
+        </div>
+        <div class="card">
+            <h3>Yoga Terapêutica</h3>
+            Equilíbrio físico, mental e emocional.
+        </div>
+    </div>
+
+    <hr style="margin:60px 0">
+
+    <h2>Nosso Espaço</h2>
+    <div class="galeria">
+        <div class="foto">
+            <img src="imagens/studio1.jpg" alt="Studio">
+            <p>Ambiente acolhedor e preparado para seu cuidado.</p>
+        </div>
+        <div class="foto">
+            <img src="imagens/pilates.jpg" alt="Pilates">
+            <p>Equipamentos modernos para Pilates Clínico.</p>
+        </div>
+        <div class="foto">
+            <img src="imagens/yoga.jpg" alt="Yoga">
+            <p>Espaço dedicado às práticas de Yoga.</p>
+        </div>
+    </div>
+
+    <hr style="margin:60px 0">
+
+    <h2>Nossa Equipe</h2>
+    <div class="galeria">
+        <div class="foto">
+            <img src="imagens/fisio.jpg" alt="Fisioterapeuta">
+            <p>Fisioterapia especializada e humanizada.</p>
+        </div>
+        <div class="foto">
+            <img src="imagens/prof-yoga.jpg" alt="Professora de Yoga">
+            <p>Instrutora certificada em Yoga e Meditação.</p>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- PILATES -->
+<section id="pilates">
+<div class="container">
+    <h2>Horários de Pilates</h2>
+
+    <div class="card">
+        <h3>Segunda a Sexta</h3>
+        07:00 às 19:00 <br>
+        <small>Intervalo: 12:00 às 13:00</small>
+    </div>
+
+    <div class="card">
+        <h3>Sábado</h3>
+        07:00 às 12:00
+    </div>
+
+    <div class="card">
+        <h3>Domingo</h3>
+        Fechado
+    </div>
+</div>
+</section>
+
+<!-- YOGA -->
+<section id="yoga">
+<div class="container">
+    <h2>Horários Semanais - Yoga</h2>
+
+    <div class="grade">
+        <div class="card">
+            <h3>Segunda</h3>
+            09:30 Integrativa<br>
+            10:30 Meditação<br>
+            17:20 Integrativa<br>
+            18:30 Integrativa
+        </div>
+        <div class="card">
+            <h3>Terça</h3>
+            07:00 Integrativa<br>
+            09:30 Sutil<br>
+            17:00 Teens<br>
+            18:10 Kids
+        </div>
+        <div class="card">
+            <h3>Quarta</h3>
+            08:00 Aéreo<br>
+            09:30 Integrativa<br>
+            17:20 Integrativa<br>
+            18:30 Integrativa
+        </div>
+        <div class="card">
+            <h3>Quinta</h3>
+            07:00 Integrativa<br>
+            09:30 Sutil<br>
+            17:20 Integrativa<br>
+            18:30 Integrativa
+        </div>
+        <div class="card">
+            <h3>Sexta</h3>
+            07:00 Aéreo<br>
+            08:15 Hatha<br>
+            09:30 Chair<br>
+            10:40 Restaurativa<br>
+            17:20 / 18:30 Yin
+        </div>
+        <div class="card">
+            <h3>Sábado</h3>
+            08:00 Acroyoga<br>
+            09:15 Hatha<br>
+            10:30 Aéreo<br>
+            11:45 Restaurativa
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+<div class="container">
+    <h2>Contato</h2>
+    <p><i class="fas fa-envelope"></i> movom.zenyoga@gmail.com</p>
+    <p><i class="fab fa-whatsapp"></i> (21) 99968-1425</p>
+</div>
+</section>
+
+<footer>
+    © 2026 Mov om Espaço De Saúde e Bem Estar
+</footer>
+
+<script>
+function mostrar(secao){
+    document.querySelectorAll("section").forEach(s=>{
+        s.classList.remove("active");
+    });
+    document.getElementById(secao).classList.add("active");
+}
+</script>
+
+</body>
+</html>
