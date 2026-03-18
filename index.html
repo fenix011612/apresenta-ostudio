@@ -130,6 +130,25 @@ section.active{
     font-size:14px;
 }
 
+.equipe-card{
+    text-align:center;
+}
+
+.equipe-foto{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    margin-bottom:12px;
+}
+
+.equipe-especialidade{
+    margin-top:10px;
+    font-size:14px;
+    color:#555;
+}
+
 footer{
     background:#111;
     color:white;
@@ -150,6 +169,7 @@ footer{
     <a href="#" onclick="mostrar('pilates')">Pilates</a>
     <a href="#" onclick="mostrar('yoga')">Yoga</a>
     <a href="#" onclick="mostrar('contato')">Contato</a>
+    <a href="#" onclick="mostrar('equipe')">Equipe</a>
 </nav>
 
 <!-- HOME -->
@@ -176,7 +196,7 @@ footer{
     <div class="grade">
         <div class="card">
             <h3>Fisioterapia Traumato-Ortopédica</h3>
-            Tratamento de lesões musculares, articulares e pós-operatórios.
+            Tratamento de lesões musculares, articulares e ps-operatórios.
         </div>
         <div class="card">
             <h3>Pilates Clínico</h3>
@@ -194,19 +214,19 @@ footer{
     <div class="galeria">
         <div class="foto">
             <img src="images/nosso-espaco-1.jpg" alt="Sala de atendimento com maca e equipamentos de fisioterapia">
-            <p>Sala de fisioterapia equipada com maca e recursos para atendimento individualizado.</p>
+            <p>Sala de fisioterapia com maca e recursos para atendimento individualizado.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-2.jpg" alt="Estúdio com aparelhos de pilates e acessórios funcionais">
-            <p>Studio equipado com aparelhos de pilates e acessórios para fortalecimento e reabilitação.</p>
+            <p>Estúdio com aparelhos de pilates e acessórios para fortalecimento e reabilitação.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-3.jpg" alt="Área de pilates aéreo com tecidos e estrutura de suspensão">
-            <p>Área de aereo com estrutura de suspensão para práticas terapêuticas.</p>
+            <p>Área de pilates aéreo com estrutura de suspensão para práticas terapêuticas.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-4.jpg" alt="Sala de yoga com tapetes e almofadas organizadas para aula em grupo">
-            <p>Sala de yoga preparada para aulas em grupo, com conforto e acolhimento.</p>
+            <p>Sala de yoga preparada para aulas em grupo com conforto e acolhimento.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-5.jpg" onerror="this.onerror=null;this.src='images/images/nosso-espaco-5.jpg';" alt="Espaço adicional da clínica para práticas corporais">
@@ -298,6 +318,35 @@ footer{
     <h2>Contato</h2>
     <p><i class="fas fa-envelope"></i> movom.zenyoga@gmail.com</p>
     <p><i class="fab fa-whatsapp"></i> (21) 99968-1425</p>
+</div>
+</section>
+
+<!-- EQUIPE -->
+<section id="equipe">
+<div class="container">
+    <h2>Nossa Equipe</h2>
+    <p>Profissionais qualificados para cuidar de você com segurança, atenção e acolhimento.</p>
+
+    <div class="grade">
+        <div class="card equipe-card">
+            <img class="equipe-foto" src="images/profissional-yoga.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=500&q=80';" alt="Foto da professora de yoga">
+            <h3>Professora de Yoga</h3>
+            <p>Atendimento para turmas e aulas adaptadas ao nível de cada aluno.</p>
+            <p class="equipe-especialidade"><strong>Especialização:</strong> Hatha Yoga, Yoga Terapêutica e Pranayama.</p>
+        </div>
+        <div class="card equipe-card">
+            <img class="equipe-foto" src="images/fisioterapeuta.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=500&q=80';" alt="Foto da fisioterapeuta">
+            <h3>Fisioterapeuta</h3>
+            <p>Avaliação e acompanhamento fisioterapêutico focado em dor e reabilitação funcional.</p>
+            <p class="equipe-especialidade"><strong>Especialização:</strong> Traumato-Ortopedia e Reabilitação Funcional.</p>
+        </div>
+        <div class="card equipe-card">
+            <img class="equipe-foto" src="images/instrutor-pilates.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80';" alt="Foto do instrutor de pilates">
+            <h3>Instrutor(a) de Pilates</h3>
+            <p>Condução de aulas clínicas e funcionais com foco em postura, força e controle corporal.</p>
+            <p class="equipe-especialidade"><strong>Especialização:</strong> Pilates Clínico e Condicionamento Funcional.</p>
+        </div>
+    </div>
 </div>
 </section>
 
