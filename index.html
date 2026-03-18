@@ -130,6 +130,74 @@ section.active{
     font-size:14px;
 }
 
+.form-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap:15px;
+}
+
+.form-grupo{
+    margin-top:12px;
+}
+
+.form-grupo label{
+    display:block;
+    font-weight:600;
+    color:#444;
+}
+
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select{
+    width:100%;
+    margin-top:6px;
+    padding:10px;
+    border:1px solid #d0d0d0;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:14px;
+    box-sizing:border-box;
+}
+
+.form-grupo textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.opcoes-linha{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:8px;
+}
+
+.opcoes-linha label{
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.opcoes-linha input{
+    width:auto;
+    margin:0;
+}
+
+.btn-salvar{
+    border:none;
+    padding:12px 20px;
+    background:#7b5cff;
+    color:#fff;
+    border-radius:8px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.btn-salvar:hover{
+    opacity:0.9;
+}
+
 footer{
     background:#111;
     color:white;
@@ -150,6 +218,7 @@ footer{
     <a href="#" onclick="mostrar('pilates')">Pilates</a>
     <a href="#" onclick="mostrar('yoga')">Yoga</a>
     <a href="#" onclick="mostrar('contato')">Contato</a>
+    <a href="#" onclick="mostrar('avaliacao-funcional')">Avaliação Funcional</a>
 </nav>
 
 <!-- HOME -->
@@ -194,22 +263,22 @@ footer{
     <div class="galeria">
         <div class="foto">
             <img src="images/nosso-espaco-1.jpg" alt="Sala de atendimento com maca e equipamentos de fisioterapia">
-            <p>Sala de fisioterapia, RPG e massoterapia.</p>
+            <p>Sala de fisioterapia com maca e recursos para atendimento individualizado.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-2.jpg" alt="Estúdio com aparelhos de pilates e acessórios funcionais">
-            <p>Sala de pilates solo, com equipamentos e acessórios, como estereira ergométrica e elíptico. </p>
+            <p>Estúdio com aparelhos de pilates e acessórios para fortalecimento e reabilitação.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-3.jpg" alt="Área de pilates aéreo com tecidos e estrutura de suspensão">
-            <p>Sala de pilates solo, com equipamentos, acessórios e treinamento em suspenção com a metodologia suspensus. </p>
+            <p>Área de pilates aéreo com estrutura de suspensão para práticas terapêuticas.</p>
         </div>
         <div class="foto">
             <img src="images/nosso-espaco-4.jpg" alt="Sala de yoga com tapetes e almofadas organizadas para aula em grupo">
-            <p>Sala de yoga com diversas modalidades, incluíndo aereo yoga.</p>
+            <p>Sala de yoga preparada para aulas em grupo com conforto e acolhimento.</p>
         </div>
         <div class="foto">
-            <img src="images/nosso-espaco-5.jpg" alt="Espaço adicional da clínica para práticas corporais">
+            <img src="images/nosso-espaco-5.jpg" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='images/nosso-espaco-5.jpeg';}else if(this.dataset.fallback==='1'){this.dataset.fallback='2';this.src='images/nosso-espaco-5.png';}else{this.onerror=null;}" alt="Espaço adicional da clínica para práticas corporais">
             <p>Mais um ambiente da clínica pensado para movimento, cuidado e bem-estar.</p>
         </div>
     </div>
@@ -301,6 +370,141 @@ footer{
 </div>
 </section>
 
+<!-- AVALIAÇÃO FUNCIONAL -->
+<section id="avaliacao-funcional">
+<div class="container">
+    <h2>Avaliação Condicionamento Funcional - Aula em Grupo</h2>
+
+    <form>
+        <div class="card">
+            <h3>Identificação</h3>
+            <div class="form-grid">
+                <div class="form-grupo"><label>Profissão</label><input type="text"></div>
+                <div class="form-grupo"><label>Endereço</label><input type="text"></div>
+                <div class="form-grupo"><label>Telefone</label><input type="text"></div>
+                <div class="form-grupo"><label>Data de Avaliação</label><input type="date"></div>
+                <div class="form-grupo"><label>Diagnóstico Clínico</label><input type="text"></div>
+                <div class="form-grupo"><label>Diagnóstico Fisioterapêutico</label><input type="text"></div>
+                <div class="form-grupo"><label>CBDF</label><input type="text"></div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>História Clínica</h3>
+            <div class="form-grupo"><label>Queixa Principal</label><textarea></textarea></div>
+            <div class="form-grupo"><label>História da Doença Atual (HDA)</label><textarea></textarea></div>
+            <div class="form-grupo"><label>Histórico de Lesões</label><textarea></textarea></div>
+
+            <div class="form-grupo">
+                <label>Acompanhamento Médico/Fisioterapêutico/Nutricional</label>
+                <div class="opcoes-linha">
+                    <label><input type="radio" name="acompanhamento"> Sim</label>
+                    <label><input type="radio" name="acompanhamento"> Não</label>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-grupo"><label>Quais</label><input type="text"></div>
+                <div class="form-grupo"><label>Usa Medicamentos</label>
+                    <div class="opcoes-linha">
+                        <label><input type="radio" name="medicamentos"> Sim</label>
+                        <label><input type="radio" name="medicamentos"> Não</label>
+                    </div>
+                </div>
+                <div class="form-grupo"><label>Quais</label><input type="text"></div>
+                <div class="form-grupo"><label>Peso (kg)</label><input type="number"></div>
+                <div class="form-grupo"><label>Altura (cm)</label><input type="number"></div>
+            </div>
+
+            <div class="form-grupo"><label>Hábitos de Vida</label><textarea></textarea></div>
+            <div class="form-grupo"><label>Metas Pessoais</label><textarea></textarea></div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>Avaliação da Dor - EVA</h3>
+            <div class="form-grupo"><label>EVA / Região</label><input type="text"></div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>Nível de Condicionamento Físico</h3>
+            <div class="opcoes-linha">
+                <label><input type="checkbox"> Ativo</label>
+                <label><input type="checkbox"> Moderadamente Ativo</label>
+                <label><input type="checkbox"> Sedentário</label>
+            </div>
+
+            <div class="form-grupo">
+                <label>Atividade Física Regular</label>
+                <div class="opcoes-linha">
+                    <label><input type="radio" name="atividade"> Sim</label>
+                    <label><input type="radio" name="atividade"> Não</label>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-grupo"><label>Quais</label><input type="text"></div>
+                <div class="form-grupo"><label>Classificação de Esforço - Escala de BORG</label><input type="number" min="0" max="10"></div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>Avaliação Física</h3>
+
+            <div class="form-grupo">
+                <label>Desvios Posturais</label>
+                <div class="opcoes-linha">
+                    <label><input type="radio" name="desvios"> Sim</label>
+                    <label><input type="radio" name="desvios"> Não</label>
+                </div>
+            </div>
+
+            <div class="form-grupo"><label>Quais</label><input type="text"></div>
+
+            <div class="form-grupo">
+                <label>Movimentos Articulares</label>
+                <div class="opcoes-linha">
+                    <label><input type="radio" name="movimentos"> Com Dor</label>
+                    <label><input type="radio" name="movimentos"> Sem Dor</label>
+                </div>
+            </div>
+
+            <div class="form-grupo"><label>Quais</label><input type="text"></div>
+            <div class="form-grupo"><label>Movimentos Funcionais</label><textarea placeholder="Agachamentos, pranchas, rotações..."></textarea></div>
+            <div class="form-grupo"><label>Mobilidade</label><textarea></textarea></div>
+            <div class="form-grupo"><label>Déficit</label><textarea></textarea></div>
+
+            <div class="form-grid">
+                <div class="form-grupo">
+                    <label>Flexibilidade</label>
+                    <select>
+                        <option>Baixa</option>
+                        <option>Média</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label>Resistência Muscular/Cardiovascular</label>
+                    <select>
+                        <option>Baixa</option>
+                        <option>Média</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>Plano Terapêutico</h3>
+            <div class="form-grupo"><textarea></textarea></div>
+            <div class="form-grupo"><label>Profissional / Registro Conselho</label><input type="text"></div>
+        </div>
+
+        <button type="submit" class="btn-salvar">Salvar Avaliação</button>
+    </form>
+</div>
+</section>
+
 <footer>
     © 2019 Mov om Espaço De Saúde e Bem Estar
 </footer>
@@ -317,6 +521,3 @@ function mostrar(secao){
 </body>
 
 </html>
-
-
-
