@@ -456,6 +456,19 @@ function mostrar(secao){
     });
     document.getElementById(secao).classList.add("active");
 }
+
+function configurarFallbackImagens(){
+    document.querySelectorAll('img[src^="images/"]').forEach(img=>{
+        img.addEventListener('error', ()=>{
+            if(img.dataset.fallbackTentado) return;
+            img.dataset.fallbackTentado = '1';
+            const original = img.getAttribute('src').replace(/^images\//, '');
+            img.src = `images/images/${original}`;
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', configurarFallbackImagens);
 </script>
 
 </body>
