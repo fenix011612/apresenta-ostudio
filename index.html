@@ -457,13 +457,40 @@ function mostrar(secao){
     document.getElementById(secao).classList.add("active");
 }
 
+function gerarTentativasImagem(nomeArquivo){
+    return [
+        `images/${nomeArquivo}`,
+        `images/images/${nomeArquivo}`,
+        `images/magos/${nomeArquivo}`,
+        `images/"${nomeArquivo}"`,
+        `images/images/"${nomeArquivo}"`,
+        `images/images/"images"/${nomeArquivo}`,
+        `images/images/"images"/"${nomeArquivo}"`
+    ];
+}
+
 function configurarFallbackImagens(){
     document.querySelectorAll('img[src^="images/"]').forEach(img=>{
+        const nomeArquivo = img.getAttribute('src').split('/').pop();
+        const tentativas = [...new Set(gerarTentativasImagem(nomeArquivo))];
+
+        // garante que o src atual seja a primeira tentativa
+        const atual = img.getAttribute('src');
+        const idxAtual = tentativas.indexOf(atual);
+        if(idxAtual > 0){
+            tentativas.splice(idxAtual, 1);
+            tentativas.unshift(atual);
+        }
+
+        img.dataset.tentativaIndex = '0';
         img.addEventListener('error', ()=>{
-            if(img.dataset.fallbackTentado) return;
-            img.dataset.fallbackTentado = '1';
-            const original = img.getAttribute('src').replace(/^images\//, '');
-            img.src = `images/images/${original}`;
+            const prox = Number(img.dataset.tentativaIndex) + 1;
+            if(prox >= tentativas.length){
+                img.onerror = null;
+                return;
+            }
+            img.dataset.tentativaIndex = String(prox);
+            img.src = tentativas[prox];
         });
     });
 }
